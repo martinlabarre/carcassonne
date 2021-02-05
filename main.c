@@ -1,4 +1,9 @@
-/* Maxime Martin*/
+
+/* 
+Les pavages de Carcassonne - Projet Algorithmique et Programmation C 
+ENSEIRB-MATMECA - RSI S6 
+Maxime GOURGUES, Martin LABARRE
+*/
 
 #include <ctype.h>
 #include <stdio.h>
