@@ -1,4 +1,8 @@
-/* Maxime Martin*/
+/* 
+Les pavages de Carcassonne - Projet Algorithmique et Programmation C 
+ENSEIRB-MATMECA - RSI S6 
+Maxime GOURGUES, Martin LABARRE
+*/
 
 #include <ctype.h>
 #include <stdio.h>
@@ -17,14 +21,13 @@ struct file_t {
     tile_t* suivant;
 }
 
-enum color_t { BLUE, RED , GREEN, YELLOW, CYAN, PURPLE, PINK, BLACK, GREY, WHITE };
+typedef enum color_t { BLUE, RED , GREEN, YELLOW, CYAN, PURPLE, PINK, BLACK, GREY, WHITE };
 
 struct player {
     const char *name;
     int tiles_count;
     struct tile draw;
 };
-
 
 struct tile_t {
     enum color colors[TILE_SIDES];
@@ -48,7 +51,7 @@ struct cell_t {
     struct tile* tile;    
 };
 
-sruct board_t {
+struct board_t {
     int range = 2*BOARD_SIZE+1;
     struct cell cells[range][range];
     int size; 
@@ -57,6 +60,10 @@ sruct board_t {
 struct game {
     const int player_count;
     struct player players[MAX_PLAYERS];
-    int score;
-   
+    int score; 
 };
+
+int main()
+{
+    return 0;
+}
