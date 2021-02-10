@@ -10,7 +10,7 @@ Maxime GOURGUES, Martin LABARRE
 #include <string.h>
 #include <stdbool.h>
 
-#define N 2 //N
+#define N 5 //N
 #define BOARD_SIZE (2*N+1) //Dimension du plateau
 #define DECK_SIZE 25    //P
 #define TILE_SIDES 4    //C
@@ -66,7 +66,28 @@ struct game {
     int score;
 };
 
+void fill_cell(struct board_t board, int x, int y, struct tile_t tile)
+{
+    *(board.cells[x][y].tile) = tile;
+    //*(cell.tile) = tile;
+}
+
+
 int main()
 {
+
+    struct board_t plateau;
+    printf("%d",(9/2));
+    //fill_cell(plateau,BOARD_SIZE)
+    int i,j;
+    for(i=0;i<BOARD_SIZE;i++)
+    {
+      printf("| ");
+      for(j=0;j<BOARD_SIZE;j++)
+      {
+        printf("| ");
+      }
+      printf("\n");
+    }
     return 0;
 }
