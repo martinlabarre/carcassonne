@@ -17,6 +17,7 @@ Maxime GOURGUES, Martin LABARRE
 #define MAX_PLAYERS 5
 
 typedef enum { BLUE, RED , GREEN, YELLOW, CYAN, PURPLE, PINK, BLACK, GREY } color_t ;
+typedef enum { PLAYER, COMPUTER } player_t;
 
 struct tile_t {
     color_t colors[TILE_SIDES];
@@ -66,31 +67,6 @@ struct game {
     int score;
 };
 
-struct tile_t init_tile()
-{
-  struct tile_t tile;
-  for(int i=0;i<TILE_SIDES;i++)
-  {
-    tile.colors[i]=BLUE;
-  }
-};
-
-struct cell_t init_cell()
-{
-    struct cell_t cell = {.tile=NULL};
-    return cell;
-};
-
-void init_board()
-{
-  struct board_t board;
-  for(int i=0; i<BOARD_SIZE;i++)
-    for(int j=0; j<BOARD_SIZE;j++)
-    {
-      board.cells[i][j]=init_cell();
-    }
-}
-
 void fill_cell(struct board_t board, int x, int y, struct tile_t tile)
 {
     *(board.cells[x][y].tile) = tile;
@@ -98,14 +74,12 @@ void fill_cell(struct board_t board, int x, int y, struct tile_t tile)
 }
 
 
-
 int main()
 {
-    int x=(BOARD_SIZE/2+1);
-    int y=(BOARD_SIZE/2+1);
+
     struct board_t plateau;
-    struct tile_t tuile;
-    fill_cell(plateau,x,y,tuile);
+    printf("%d",(9/2));
+    //fill_cell(plateau,BOARD_SIZE)
     int i,j;
     for(i=0;i<BOARD_SIZE;i++)
     {
